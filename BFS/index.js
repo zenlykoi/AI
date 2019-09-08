@@ -17,6 +17,29 @@ let map = {
   "d3" : ["c3"]
 }
 
+//Tree
+let map2 = {
+  "A" : ["B","C","D"],
+  "B" : ["M","N"],
+  "C" : ["L"],
+  "D" : ["O","P"],
+  "M" : ["X","Y"],
+  "N" : ["U","V"],
+  "O" : ["I","J"],
+  "Y" : ["R","S"],
+  "X" : [],
+  "L" : [],
+  "P" : [],
+  "U" : [],
+  "V" : ["G","H"],
+  "I" : [],
+  "J" : [],
+  "R" : [],
+  "S" : [],
+  "G" : [],
+  "H" : [],
+}
+
 function BFS(start,end,map){
   if(map[start] == undefined || map[start] == "block" || map[end] == undefined || map[end] == "block"){
     return false;
@@ -56,10 +79,22 @@ function BFS(start,end,map){
       openList.push(dpd[i]);
     }
   }
+  function deleteUnreadList(list){
+    let check = false;
+    for(key in list){
+      if(check == true){
+        delete list[key];
+      }
+      if(key == end){
+        check = true;
+      }
+    }
+  }
   while(open.length > 0){
     let edge = open[0];
     open.shift();
     if(edge == end){
+      deleteUnreadList(list);
       return {
         way : way(list),
         list : list
@@ -69,7 +104,11 @@ function BFS(start,end,map){
     close.push(edge);
   }
 }
-
+//ex1
 let result = BFS("a0","d3",map);
 console.log(result.way);
 console.log(result.list);
+//ex2
+let result2 = BFS("A","U",map2);
+console.log(result2.way);
+console.log(result2.list);
