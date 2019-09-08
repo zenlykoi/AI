@@ -2,6 +2,7 @@
 
 ## map picture
 ![map](https://raw.githubusercontent.com/zenlykoi/AI/master/BFS/map.png)
+![tree_map](https://raw.githubusercontent.com/zenlykoi/AI/master/BFS/tree_map.png)
 
 ## map code
 ```javascript
