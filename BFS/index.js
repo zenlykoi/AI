@@ -18,6 +18,9 @@ let map = {
 }
 
 function BFS(start,end,map){
+  if(map[start] == undefined || map[start] == "block" || map[end] == undefined || map[end] == "block"){
+    return false;
+  }
   let open = [];
   let close = [];
   let list = {};
@@ -38,7 +41,7 @@ function BFS(start,end,map){
     }
     return result;
   }
-  let line = function(list){
+  let way = function(list){
     let result = [];
     let edge = end;
     result.unshift(edge);
@@ -58,7 +61,7 @@ function BFS(start,end,map){
     open.shift();
     if(edge == end){
       return {
-        line : line(list),
+        way : way(list),
         list : list
       }
     }
@@ -68,4 +71,5 @@ function BFS(start,end,map){
 }
 
 let result = BFS("a0","d3",map);
+console.log(result.way);
 console.log(result.list);
