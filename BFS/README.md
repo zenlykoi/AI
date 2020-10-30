@@ -56,6 +56,6 @@ let result = BFS("a0","d3",map);
 console.log(result.way);       //The way to the goal
 console.log(result.list);      //The list of edges has been checked
 
-//input "To" + "Goal"
+//input "From" + "Goal"
 //output ["edge1","edge2"] <- way
 ```
