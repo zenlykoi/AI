@@ -1,12 +1,12 @@
 # BFS - JS code example
 
-## map picture
+## map
 ![map](https://raw.githubusercontent.com/zenlykoi/AI/master/BFS/map.png)
 ![tree_map](https://raw.githubusercontent.com/zenlykoi/AI/master/BFS/tree_map.png)
 
-## map code
+## code
 ```javascript
-//The value of the edges is a array of its adjacent edges and not is the blocks
+//The value of the edges is an array of its adjacent edges and not is the blocks
 let map = {
   "a0" : ["b0","a1"],
   "a1" : ["a0","a2"],
